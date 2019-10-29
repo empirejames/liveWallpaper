@@ -115,12 +115,14 @@ public class VideoWallPaperService extends WallpaperService {
 		@Override
 		public void onSurfaceCreated(SurfaceHolder holder) {
 			super.onSurfaceCreated(holder);
-			rePlayPlayer(holder);
+			Log.e("LoopMediaPlayer", "onSurfaceCreated");
+			LoopMediaPlayer.create(VideoWallPaperService.this, R.raw.education_animation, holder);
 		}
 
 		@Override
 		public void onSurfaceDestroyed(SurfaceHolder holder) {
 			super.onSurfaceDestroyed(holder);
+			Log.e("LoopMediaPlayer", "onSurfaceDestroyed");
 //			if (mMPCurrPlayer.isPlaying()) {
 //				mMPCurrPlayer.stop();
 //			}
